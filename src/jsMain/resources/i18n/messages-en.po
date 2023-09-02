@@ -1,0 +1,21 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language: English\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: src/jsMain/kotlin/edu/estebandc/project/components/NavBar.kt:13
+msgid "Home"
+msgstr "Test"
+
+#: src/jsMain/kotlin/edu/estebandc/project/components/NavBar.kt:14
+msgid "Skills"
+msgstr "TOTO"
+
+#: src/jsMain/kotlin/edu/estebandc/project/App.kt:16
+msgid "test"
+msgstr "hihihi"
+
+#: src/jsMain/kotlin/edu/estebandc/project/layout/shared/NavBar.kt:15
+msgid "Skill 1"
+msgstr "Skill 1"
