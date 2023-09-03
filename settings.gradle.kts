@@ -5,4 +5,4 @@ pluginManagement {
         mavenLocal()
     }
 }
-rootProject.name = "project"
+rootProject.name = "protfolio"
