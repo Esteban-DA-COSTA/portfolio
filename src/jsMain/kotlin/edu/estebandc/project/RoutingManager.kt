@@ -6,8 +6,8 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
 
 enum class Pages(val url: String) {
-    HOME("/home"),
-    SKILLS("/skills")
+    HOME("home"),
+    SKILLS("skills")
 
 }
 

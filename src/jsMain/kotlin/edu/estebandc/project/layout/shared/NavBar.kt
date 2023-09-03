@@ -6,9 +6,9 @@ import io.kvision.i18n.tr
 import io.kvision.navbar.*
 
 fun Container.headerNav(): Navbar {
-    return navbar("Nav") {
+    return navbar {
         nav {
-            navLink(label = tr("Home"), icon = "fas fa-house", url = "/home", dataNavigo = true)
+            navLink(label = tr("Home"), icon = "fas fa-house", url = "home", dataNavigo = true)
             dropDown(tr("Skills"), icon = "fa fa-tags", forNavbar = true, elements = listOf(
                 "ALL" to "#/skills/all",
                 tr("Skill 1") to "#/skills/1")

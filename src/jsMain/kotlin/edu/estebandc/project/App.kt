@@ -30,10 +30,10 @@ class App : Application() {
 
         root("kvapp") {
             routing
-                .on({ routing.navigate("/home") })
+                .on({ routing.navigate("home") })
                 .on(Pages.HOME.url, { RoutingManager.goToHomePage() })
-                .on("${Pages.SKILLS}/all", { RoutingManager.goToSkillHomePage() })
-                .on("${Pages.SKILLS}/1", { div("toto") })
+                .on("${Pages.SKILLS.url}/all", { RoutingManager.goToSkillHomePage() })
+                .on("${Pages.SKILLS.url}/1", { div("toto") })
                 .resolve()
 
             header { headerNav() }
