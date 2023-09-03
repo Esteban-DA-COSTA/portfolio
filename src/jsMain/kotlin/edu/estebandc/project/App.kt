@@ -5,15 +5,20 @@ import edu.estebandc.project.layout.shared.headerNav
 import edu.estebandc.project.layout.skills.skillsHomePage
 import io.kvision.*
 import io.kvision.html.div
+import io.kvision.html.header
+import io.kvision.html.main
 import io.kvision.i18n.DefaultI18nManager
 import io.kvision.i18n.I18n
 import io.kvision.panel.root
 import io.kvision.routing.Routing
+import io.kvision.state.bind
 
 class App : Application() {
     override fun start() {
         val routing = Routing.init()
+        RoutingManager.initManager()
 
+        // Internationalization
         I18n.manager =
             DefaultI18nManager(
                 mapOf(
@@ -22,14 +27,27 @@ class App : Application() {
                 )
             )
 
+
         root("kvapp") {
             routing
-                .on("/home", { homePage() })
-                .on("/skills/all", { skillsHomePage() })
-                .on("/skills/1", { div("toto") })
+                .on({ routing.navigate("/home") })
+                .on(Pages.HOME.url, { RoutingManager.goToHomePage() })
+                .on("${Pages.SKILLS}/all", { RoutingManager.goToSkillHomePage() })
+                .on("${Pages.SKILLS}/1", { div("toto") })
                 .resolve()
-            headerNav()
-            routing.navigate("/home")
+
+            header { headerNav() }
+
+            main().bind(RoutingManager.stateStore) { state ->
+                when(state.currentPage) {
+                    Pages.HOME -> {
+                        homePage()
+                    }
+                    Pages.SKILLS -> {
+                        skillsHomePage()
+                    }
+                }
+            }
         }
     }
 }
