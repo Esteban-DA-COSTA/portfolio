@@ -5,14 +5,25 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
 
-enum class Pages(val url: String) {
+enum class Category(val url: String) {
     HOME("home"),
-    SKILLS("skills")
+    SKILLS("skills"),
+    PROJECTS("projects")
 
 }
 
+enum class SubCategory(val url: String) {
+    JAVA("java");
+
+    companion object {
+        fun urlOf(url: String): SubCategory? {
+            return entries.find { subCategory -> subCategory.url == url }
+        }
+    }
+}
+
 object RoutingManager : CoroutineScope by CoroutineScope(Dispatchers.Default + SupervisorJob()) {
-    val stateStore = createReduxStore(::reducer, AppState(Pages.HOME))
+    val stateStore = createReduxStore(::reducer, AppState(Category.HOME))
 
     /**
      * Init manager
@@ -26,10 +37,10 @@ object RoutingManager : CoroutineScope by CoroutineScope(Dispatchers.Default + S
      * This method updates the state of the application to change the current page to the home page.
      *
      * @see [AppAction.ChangePage]
-     * @see [Pages.HOME]
+     * @see [Category.HOME]
      */
     fun goToHomePage() {
-        stateStore.dispatch(AppAction.ChangePage(Pages.HOME))
+        stateStore.dispatch(AppAction.ChangePage(Category.HOME))
     }
 
     /**
@@ -38,7 +49,12 @@ object RoutingManager : CoroutineScope by CoroutineScope(Dispatchers.Default + S
      * This method dispatches an AppAction to change the current page to the skills page.
      * The stateStore is responsible for handling the dispatched action and updating the application state accordingly.
      */
-    fun goToSkillHomePage() {
-        stateStore.dispatch(AppAction.ChangePage(Pages.SKILLS))
+    fun goToSkillPage(subCategory: SubCategory? = null) {
+        stateStore.dispatch(AppAction.ChangePage(Category.SKILLS, subCategory))
+    }
+
+    fun goToProjectPage(subPage: Int? = null) {
+        console.log("subPage", subPage)
+        stateStore.dispatch(AppAction.ChangePage(Category.PROJECTS, newPage = subPage))
     }
 }

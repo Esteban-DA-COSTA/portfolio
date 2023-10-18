@@ -7,10 +7,14 @@ msgstr ""
 msgid "Home"
 msgstr ""
 
-#: src/jsMain/kotlin/edu/estebandc/project/layout/shared/NavBar.kt:15
+#: src/jsMain/kotlin/edu/estebandc/project/layout/shared/NavBar.kt:22
+msgid "Projects"
+msgstr ""
+
+#: src/jsMain/kotlin/edu/estebandc/project/layout/shared/NavBar.kt:18
 msgid "Skill 1"
 msgstr ""
 
-#: src/jsMain/kotlin/edu/estebandc/project/layout/shared/NavBar.kt:15
+#: src/jsMain/kotlin/edu/estebandc/project/layout/shared/NavBar.kt:16
 msgid "Skills"
 msgstr ""

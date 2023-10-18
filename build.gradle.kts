@@ -59,6 +59,7 @@ kotlin {
         implementation("io.kvision:kvision-i18n:${kvisionVersion}")
         implementation("io.kvision:kvision-routing-navigo-ng:$kvisionVersion")
         implementation("io.kvision:kvision-redux:$kvisionVersion")
+        implementation("io.kvision:kvision-chart:$kvisionVersion")
     }
     sourceSets["jsTest"].dependencies {
         implementation(kotlin("test-js"))
