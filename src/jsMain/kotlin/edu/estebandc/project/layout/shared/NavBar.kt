@@ -1,18 +1,37 @@
 package edu.estebandc.project.layout.shared
 
-import io.kvision.core.Container
+import edu.estebandc.project.RoutingManager
+import io.kvision.core.*
 import io.kvision.dropdown.dropDown
+import io.kvision.html.image
 import io.kvision.i18n.tr
-import io.kvision.navbar.Navbar
-import io.kvision.navbar.nav
-import io.kvision.navbar.navLink
-import io.kvision.navbar.navbar
+import io.kvision.navbar.*
 
 fun Container.headerNav(): Navbar {
-    return navbar(tr("Home"), link = "#/home") {
-        nav(true) {
+    return navbar(className = "navbar", type = NavbarType.FIXEDTOP) {
+        removeCssClass("bg-body-tertiary")
+        nav {
+            image("images/logo.jpg") {
+                cursor = Cursor.POINTER
+                width = 53 to UNIT.px
+                height = 53 to UNIT.px
+                onClick {
+                    RoutingManager.goToHomePage()
+                }
+            }
+            navLink("Esteban DA COSTA", "#/home") {
+                paddingTop = 1 to UNIT.rem
+            }
+        }
+
+        nav {
             dropDown(
-                tr("Skills"), icon = "fa fa-tags", forNavbar = true, arrowVisible = false, elements = listOf(
+                "Parcours", forNavbar = true, elements = listOf(
+                    "Mon Parcours" to "#/mon_parcours"
+                )
+            )
+            dropDown(
+                tr("Skills"), icon = "fa fa-tags", forNavbar = true, elements = listOf(
                     "ALL" to "#/skills/all",
                     "Java" to "#/skills/java"
                 )
@@ -23,6 +42,11 @@ fun Container.headerNav(): Navbar {
                     "Project 1" to "#/projects/1"
                 )
             )
+        }
+
+        nav {
+            navLink("Contact")
+            navLink("Langue")
         }
 
     }

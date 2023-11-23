@@ -15,6 +15,10 @@ import io.kvision.state.bind
 import kotlin.js.RegExp
 
 class App : Application() {
+    init {
+        require("css/navbar.css")
+    }
+
     override fun start() {
         val routing = Routing.init()
         RoutingManager.initManager()

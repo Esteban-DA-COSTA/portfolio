@@ -1,0 +1,15 @@
+
+.navbar {
+    display: flex;
+    width: 1920px;
+    padding: 16px 250px;
+    justify-content: space-between;
+    align-items: center;
+    gap: 300px;
+
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.00) 0%, rgba(185, 185, 185, 0.20) 100%);
+}
+
+#kv_navbar_0 {
+    justify-content: space-between;
+}
