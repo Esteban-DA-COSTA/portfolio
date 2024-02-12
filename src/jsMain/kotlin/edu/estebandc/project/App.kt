@@ -1,6 +1,6 @@
 package edu.estebandc.project
 
-import edu.estebandc.project.layout.homePage
+import edu.estebandc.project.layout.renderHomePage
 import edu.estebandc.project.layout.projects.projectPage
 import edu.estebandc.project.layout.shared.headerNav
 import edu.estebandc.project.layout.skills.skillsPage
@@ -17,10 +17,11 @@ import kotlin.js.RegExp
 class App : Application() {
     init {
         require("css/navbar.css")
+        require("css/card.css")
     }
 
     override fun start() {
-        val routing = Routing.init()
+        val routing = Routing.init("/", useHash = false)
         RoutingManager.initManager()
 
         // Internationalization
@@ -35,10 +36,11 @@ class App : Application() {
 
         root("kvapp") {
             routing
-                .on({ routing.navigate("home") })
+                .on({ routing.navigate("/home") })
                 .on(Category.HOME.url, { RoutingManager.goToHomePage() })
-                .on("${Category.SKILLS.url}/all", { RoutingManager.goToSkillPage() })
-                .on("${Category.PROJECTS.url}/all", { RoutingManager.goToProjectPage() })
+                .on(Category.SKILLS.url, { RoutingManager.goToSkillPage() })
+                .on(Category.PROJECTS.url, { RoutingManager.goToProjectPage() })
+                .on("${Category.PROJECTS.url}/1", { RoutingManager.goToProjectPage(1) })
                 .on(RegExp("${Category.SKILLS.url}/(.*)"), { match ->
                     console.log(match.data[0])
                     val subCategory = SubCategory.urlOf(match.data[0])
@@ -55,7 +57,7 @@ class App : Application() {
             main().bind(RoutingManager.stateStore) { state ->
                 when(state.currentCategory) {
                     Category.HOME -> {
-                        homePage()
+                        renderHomePage()
                     }
                     Category.SKILLS -> {
                         console.log("state = ${state.currentPage}")

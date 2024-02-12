@@ -8,11 +8,12 @@ import io.kvision.html.h1
 
 fun Container.projectPage(page: Int? = null) {
     console.log("final page = $page")
-    when (page as String?) {
+    val strPage = page?.toString()
+    when (strPage) {
         null -> {
             div {
-                height = Pair(500, UNIT.px)
-                width = Pair(500, UNIT.px)
+                height = 500 to UNIT.px
+                width = 500 to UNIT.px
                 chart(
                     Configuration(
                         ChartType.DOUGHNUT,
@@ -23,7 +24,7 @@ fun Container.projectPage(page: Int? = null) {
                         listOf("Java", "JS", "HTML"),
                         ChartOptions(
                             onClick = { event, elements, chart ->
-
+                                console.log(chart)
                                 println("elements = ${elements.size}")
                                 println("event = ${event.type}")
                                 elements.forEach {

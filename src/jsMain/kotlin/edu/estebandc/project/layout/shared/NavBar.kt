@@ -8,10 +8,10 @@ import io.kvision.i18n.tr
 import io.kvision.navbar.*
 
 fun Container.headerNav(): Navbar {
-    return navbar(className = "navbar", type = NavbarType.FIXEDTOP) {
+    return navbar(className = "navbar", type = NavbarType.FIXEDTOP, dataNavigo = true) {
         removeCssClass("bg-body-tertiary")
-        nav {
-            image("images/logo.jpg") {
+        nav { // Logo and home links
+            image("/images/logo.jpg") {
                 cursor = Cursor.POINTER
                 width = 53 to UNIT.px
                 height = 53 to UNIT.px
@@ -19,32 +19,32 @@ fun Container.headerNav(): Navbar {
                     RoutingManager.goToHomePage()
                 }
             }
-            navLink("Esteban DA COSTA", "#/home") {
+            navLink("Esteban DA COSTA", "home") {
                 paddingTop = 1 to UNIT.rem
             }
         }
 
-        nav {
+        nav { // Centered nav with site navigation
             dropDown(
                 "Parcours", forNavbar = true, elements = listOf(
-                    "Mon Parcours" to "#/mon_parcours"
+                    "Mon Parcours" to "/mon_parcours"
                 )
             )
             dropDown(
-                tr("Skills"), icon = "fa fa-tags", forNavbar = true, elements = listOf(
-                    "ALL" to "#/skills/all",
-                    "Java" to "#/skills/java"
+                tr("Skills"), forNavbar = true, elements = listOf(
+                    "ALL" to "/skills",
+                    "Java" to "/skills/java"
                 )
             )
             dropDown(
-                tr("Projects"), icon = "fa fa-briefcase", forNavbar = true, elements = listOf(
-                    "ALL" to "#/projects/all",
-                    "Project 1" to "#/projects/1"
+                tr("Projects"), forNavbar = true, elements = listOf(
+                    "ALL" to "/projects",
+                    "Project 1" to "/projects/1"
                 )
             )
         }
 
-        nav {
+        nav { // Right nav with contact and language settings
             navLink("Contact")
             navLink("Langue")
         }
