@@ -6,11 +6,11 @@ import redux.RAction
 data class AppState(
     val currentCategory: Category = Category.HOME,
     val currentSubCategory: SubCategory? = null,
-    val currentPage: Int? = null
+    val currentProject: Project? = null
 )
 
 sealed class AppAction: RAction {
-    data class ChangePage(val newCategory: Category, val newSubCategory: SubCategory? = null, val newPage: Int? = null) : AppAction()
+    data class ChangePage(val newCategory: Category, val newSubCategory: SubCategory? = null, val newProject: Project? = null) : AppAction()
 }
 
 
@@ -19,7 +19,7 @@ fun reducer(state: AppState, action: AppAction): AppState = when (action) {
         state.copy(
             currentCategory = action.newCategory,
             currentSubCategory = action.newSubCategory,
-            currentPage = action.newPage
+            currentProject = action.newProject
         )
     }
 }

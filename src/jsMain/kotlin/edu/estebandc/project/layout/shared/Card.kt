@@ -65,10 +65,8 @@ fun Container.card(
     img: ResString? = null,
     alignement: CardAlignement = CardAlignement.LEFT,
     init: (VPanel.() -> Unit)? = null,
-): Component {
-    val card = Card(header, subHeader, img, alignement, init)
-    this.add(card)
-    return card
+): Card {
+    return Card(header, subHeader, img, alignement, init).also { add(it) }
 }
 
 

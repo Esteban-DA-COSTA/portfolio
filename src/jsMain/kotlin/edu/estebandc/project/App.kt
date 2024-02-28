@@ -1,7 +1,7 @@
 package edu.estebandc.project
 
-import edu.estebandc.project.layout.renderHomePage
 import edu.estebandc.project.layout.projects.projectPage
+import edu.estebandc.project.layout.renderHomePage
 import edu.estebandc.project.layout.shared.headerNav
 import edu.estebandc.project.layout.skills.skillsPage
 import io.kvision.*
@@ -11,6 +11,7 @@ import io.kvision.i18n.DefaultI18nManager
 import io.kvision.i18n.I18n
 import io.kvision.panel.root
 import io.kvision.routing.Routing
+import io.kvision.routing.Strategy
 import io.kvision.state.bind
 import kotlin.js.RegExp
 
@@ -21,7 +22,7 @@ class App : Application() {
     }
 
     override fun start() {
-        val routing = Routing.init("/", useHash = false)
+        val routing = Routing.init("/", useHash = false, Strategy.ALL)
         RoutingManager.initManager()
 
         // Internationalization
@@ -40,33 +41,26 @@ class App : Application() {
                 .on(Category.HOME.url, { RoutingManager.goToHomePage() })
                 .on(Category.SKILLS.url, { RoutingManager.goToSkillPage() })
                 .on(Category.PROJECTS.url, { RoutingManager.goToProjectPage() })
-                .on("${Category.PROJECTS.url}/1", { RoutingManager.goToProjectPage(1) })
-                .on(RegExp("${Category.SKILLS.url}/(.*)"), { match ->
-                    console.log(match.data[0])
-                    val subCategory = SubCategory.urlOf(match.data[0])
-                    console.log(subCategory)
-                    RoutingManager.goToSkillPage(subCategory)
-                })
-                .on(RegExp("${Category.PROJECTS.url}/([0-9]*)"), { match -> RoutingManager.goToProjectPage(match.data[0])
-                })
+                .on(
+                    "${Category.PROJECTS.url}/${Project.FLOD_EDT_MOBILE.url}",
+                    { RoutingManager.goToProjectPage(Project.FLOD_EDT_MOBILE) })
                 .resolve()
 
             header { headerNav() }
 
             // Bind the redux state on main container
             main().bind(RoutingManager.stateStore) { state ->
-                when(state.currentCategory) {
+                when (state.currentCategory) {
                     Category.HOME -> {
                         renderHomePage()
                     }
+
                     Category.SKILLS -> {
-                        console.log("state = ${state.currentPage}")
                         skillsPage(state.currentSubCategory)
                     }
 
                     Category.PROJECTS -> {
-                        console.log("state = ${state.currentPage}")
-                        projectPage(state.currentPage)
+                        projectPage(state.currentProject)
                     }
                 }
             }

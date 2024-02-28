@@ -1,15 +1,16 @@
 package edu.estebandc.project.layout.projects
 
+import edu.estebandc.project.Project
+import edu.estebandc.project.SubCategory
 import io.kvision.chart.*
 import io.kvision.core.Container
 import io.kvision.core.UNIT
 import io.kvision.html.div
 import io.kvision.html.h1
 
-fun Container.projectPage(page: Int? = null) {
-    console.log("final page = $page")
-    val strPage = page?.toString()
-    when (strPage) {
+fun Container.projectPage(page: Project? = null) {
+    console.log("final page = ${page?.name}")
+    when (page) {
         null -> {
             div {
                 height = 500 to UNIT.px
@@ -44,13 +45,12 @@ fun Container.projectPage(page: Int? = null) {
 
             }
         }
-        "1" -> {
+        Project.FLOD_EDT_MOBILE -> {
             console.log("test")
             div {
                 h1("current page is $page")
             }
         }
-        else -> console.log("test2")
     }
 
 
