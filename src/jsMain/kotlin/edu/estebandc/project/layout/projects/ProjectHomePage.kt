@@ -1,14 +1,13 @@
 package edu.estebandc.project.layout.projects
 
 import edu.estebandc.project.Project
-import edu.estebandc.project.SubCategory
 import io.kvision.chart.*
 import io.kvision.core.Container
 import io.kvision.core.UNIT
 import io.kvision.html.div
-import io.kvision.html.h1
+import io.kvision.routing.Routing
 
-fun Container.projectPage(page: Project? = null) {
+fun Container.projectPage(page: Project? = null, routing: Routing) {
     console.log("final page = ${page?.name}")
     when (page) {
         null -> {
@@ -47,9 +46,7 @@ fun Container.projectPage(page: Project? = null) {
         }
         Project.FLOD_EDT_MOBILE -> {
             console.log("test")
-            div {
-                h1("current page is $page")
-            }
+            flopEDTProjectPage(routing)
         }
     }
 

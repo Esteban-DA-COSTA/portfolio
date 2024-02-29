@@ -19,6 +19,7 @@ fun Container.skillsPage(subCategory: SubCategory?) {
                 h1("Current subCategory is ${subCategory.name}")
             }
         }
+        else -> TODO()
     }
 
 }

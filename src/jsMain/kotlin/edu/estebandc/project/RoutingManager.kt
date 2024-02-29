@@ -13,7 +13,10 @@ enum class Category(val url: String) {
 }
 
 enum class SubCategory(val url: String) {
-    JAVA("java");
+    JAVA("java"),
+    BASE_DE_DONNEES("bdd"),
+    API_REST("api"),
+    ANDROID("android");
 
     companion object {
         fun urlOf(url: String): SubCategory? {

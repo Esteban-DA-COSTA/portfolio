@@ -5,6 +5,8 @@ import edu.estebandc.project.layout.renderHomePage
 import edu.estebandc.project.layout.shared.headerNav
 import edu.estebandc.project.layout.skills.skillsPage
 import io.kvision.*
+import io.kvision.core.UNIT
+import io.kvision.html.div
 import io.kvision.html.header
 import io.kvision.html.main
 import io.kvision.i18n.DefaultI18nManager
@@ -13,7 +15,6 @@ import io.kvision.panel.root
 import io.kvision.routing.Routing
 import io.kvision.routing.Strategy
 import io.kvision.state.bind
-import kotlin.js.RegExp
 
 class App : Application() {
     init {
@@ -47,7 +48,6 @@ class App : Application() {
                 .resolve()
 
             header { headerNav() }
-
             // Bind the redux state on main container
             main().bind(RoutingManager.stateStore) { state ->
                 when (state.currentCategory) {
@@ -56,11 +56,19 @@ class App : Application() {
                     }
 
                     Category.SKILLS -> {
+                        div {
+                            height = 100 to UNIT.px
+                        }
+
                         skillsPage(state.currentSubCategory)
                     }
 
                     Category.PROJECTS -> {
-                        projectPage(state.currentProject)
+                        div {
+                            height = 100 to UNIT.px
+                        }
+
+                        projectPage(state.currentProject, routing)
                     }
                 }
             }
