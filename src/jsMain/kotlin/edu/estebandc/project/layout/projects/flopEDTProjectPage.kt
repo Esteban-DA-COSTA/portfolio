@@ -1,6 +1,6 @@
 package edu.estebandc.project.layout.projects
 
-import edu.estebandc.project.SubCategory
+import edu.estebandc.project.Skills
 import edu.estebandc.project.layout.shared.card
 import edu.estebandc.project.layout.shared.projectSummary
 import edu.estebandc.project.layout.shared.section
@@ -17,10 +17,10 @@ fun Container.flopEDTProjectPage(routing: Routing) {
                 "Ce projet avait pour ambition de d'implémenter une version Android de l'outil de gestion de projet utilisé par l'école."
             ),
             mapOf(
-                SubCategory.ANDROID to 35,
-                SubCategory.JAVA to 35,
-                SubCategory.BASE_DE_DONNEES to 20,
-                SubCategory.API_REST to 10
+                Skills.ANDROID to 35,
+                Skills.JAVA to 35,
+                Skills.BASE_DE_DONNEES to 20,
+                Skills.API_REST to 10
             ), routing
         )
         section("Le projet") {

@@ -1,11 +1,11 @@
 package edu.estebandc.project.layout.skills
 
-import edu.estebandc.project.SubCategory
+import edu.estebandc.project.Skills
 import io.kvision.core.Container
 import io.kvision.html.div
 import io.kvision.html.h1
 
-fun Container.skillsPage(subCategory: SubCategory?) {
+fun Container.skillsPage(subCategory: Skills?) {
     console.log("subCategory = $subCategory")
     when (subCategory) {
         null -> {
@@ -14,10 +14,8 @@ fun Container.skillsPage(subCategory: SubCategory?) {
             }
         }
 
-        SubCategory.JAVA -> {
-            div {
-                h1("Current subCategory is ${subCategory.name}")
-            }
+        Skills.JAVA -> {
+            javaSkillPage()
         }
         else -> TODO()
     }

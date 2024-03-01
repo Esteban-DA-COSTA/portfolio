@@ -1,17 +1,15 @@
 package edu.estebandc.project.layout.shared
 
-import edu.estebandc.project.Category
-import edu.estebandc.project.Project
-import edu.estebandc.project.RoutingManager
-import edu.estebandc.project.SubCategory
+import edu.estebandc.project.*
 import io.kvision.core.*
+import io.kvision.dropdown.DD
 import io.kvision.dropdown.dropDown
 import io.kvision.html.image
 import io.kvision.i18n.tr
 import io.kvision.navbar.*
 
 fun Container.headerNav(): Navbar {
-    return navbar(className = "navbar", type = NavbarType.FIXEDTOP, dataNavigo = true) {
+    return navbar(className = "navbar", type = NavbarType.STICKYTOP, dataNavigo = true) {
         removeCssClass("bg-body-tertiary")
         nav { // Logo and home links
             image("/images/logo.jpg") {
@@ -28,19 +26,26 @@ fun Container.headerNav(): Navbar {
         }
 
         nav { // Centered nav with site navigation
-            dropDown(
-                "Parcours", forNavbar = true, elements = listOf(
-                    "Mon Parcours" to "/mon_parcours"
-                )
-            )
+            navLink("Mon parcours", "/mon_parcours")
+
             val skillsList = mutableListOf("ALL" to "/${Category.SKILLS.url}")
-            SubCategory.entries.map {
-                skillsList.add(it.capitalize() to "/${Category.SKILLS.url}/${it.url}")
+            skillsList.add("Separator" to DD.SEPARATOR.option)
+            skillsList.add("Compétences techniques" to DD.HEADER.option)
+            Skills.entries.map {
+                if (it.type == SkillType.TECHNIQUE)
+                    skillsList.add(it.capitalize() to "/${Category.SKILLS.url}/${it.url}")
+            }
+            skillsList.add("Separator" to DD.SEPARATOR.option)
+            skillsList.add("Compétences humaines" to DD.HEADER.option)
+            Skills.entries.map {
+                if (it.type == SkillType.HUMAIN)
+                    skillsList.add(it.capitalize() to "/${Category.SKILLS.url}/${it.url}")
             }
             dropDown(
                 tr("Skills"), forNavbar = true, elements = skillsList
             )
             val projectList = mutableListOf("ALL" to "/${Category.PROJECTS.url}")
+            projectList.add("Separator" to DD.SEPARATOR.option)
             Project.entries.map {
                 projectList.add(it.capitalize() to "/${Category.PROJECTS.url}/${it.url}")
             }

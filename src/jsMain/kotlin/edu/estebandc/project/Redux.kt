@@ -5,12 +5,12 @@ import redux.RAction
 
 data class AppState(
     val currentCategory: Category = Category.HOME,
-    val currentSubCategory: SubCategory? = null,
+    val currentSubCategory: Skills? = null,
     val currentProject: Project? = null
 )
 
 sealed class AppAction: RAction {
-    data class ChangePage(val newCategory: Category, val newSubCategory: SubCategory? = null, val newProject: Project? = null) : AppAction()
+    data class ChangePage(val newCategory: Category, val newSubCategory: Skills? = null, val newProject: Project? = null) : AppAction()
 }
 
 

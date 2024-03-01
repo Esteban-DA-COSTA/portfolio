@@ -12,16 +12,20 @@ enum class Category(val url: String) {
 
 }
 
-enum class SubCategory(val url: String) {
-    JAVA("java"),
-    BASE_DE_DONNEES("bdd"),
-    API_REST("api"),
-    ANDROID("android");
+enum class Skills(val url: String, val type: SkillType) {
+    JAVA("java", SkillType.TECHNIQUE),
+    BASE_DE_DONNEES("bdd", SkillType.TECHNIQUE),
+    API_REST("api", SkillType.TECHNIQUE),
+    ANDROID("android", SkillType.TECHNIQUE),
+    TRAVAIL_EN_AUTONOMIE("autonomie", SkillType.HUMAIN),
+    ECOUTE_CLIENTELE("ecoute", SkillType.HUMAIN),
+    AUTO_FORMATION("auto_formation", SkillType.HUMAIN),
+    COMMUNICATION_EN_ANGLAIS("englais", SkillType.HUMAIN),;
 
     fun capitalize() = name.lowercase().replaceFirstChar { it.uppercaseChar() }.replace("_", " ")
 
     companion object {
-        fun urlOf(url: String): SubCategory? {
+        fun urlOf(url: String): Skills? {
             return entries.find { subCategory -> subCategory.url == url }
         }
     }
@@ -70,7 +74,7 @@ object RoutingManager : CoroutineScope by CoroutineScope(Dispatchers.Default + S
      * This method dispatches an AppAction to change the current page to the skills page.
      * The stateStore is responsible for handling the dispatched action and updating the application state accordingly.
      */
-    fun goToSkillPage(subCategory: SubCategory? = null) {
+    fun goToSkillPage(subCategory: Skills? = null) {
         stateStore.dispatch(AppAction.ChangePage(Category.SKILLS, subCategory))
     }
 
