@@ -28,7 +28,11 @@ enum class SubCategory(val url: String) {
 }
 
 enum class Project(val url: String) {
-    FLOD_EDT_MOBILE("flop_edt");
+    FLOD_EDT_MOBILE("flop_edt"),
+    KLASSIFILE("klassifile"),
+    LINKED("linked"),
+    EREC("erec"),
+    TSAS("tsas");
 
     fun capitalize() = name.lowercase().replaceFirstChar { it.uppercaseChar() }.replace("_", " ")
 

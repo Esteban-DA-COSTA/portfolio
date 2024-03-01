@@ -71,10 +71,6 @@ class App : Application() {
                     }
 
                     Category.PROJECTS -> {
-                        div {
-                            height = 100 to UNIT.px
-                        }
-
                         projectPage(state.currentProject, routing)
                     }
                 }

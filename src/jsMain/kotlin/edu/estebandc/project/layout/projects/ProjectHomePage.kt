@@ -5,6 +5,7 @@ import io.kvision.chart.*
 import io.kvision.core.Container
 import io.kvision.core.UNIT
 import io.kvision.html.div
+import io.kvision.html.h1
 import io.kvision.routing.Routing
 
 fun Container.projectPage(page: Project? = null, routing: Routing) {
@@ -48,6 +49,7 @@ fun Container.projectPage(page: Project? = null, routing: Routing) {
             console.log("test")
             flopEDTProjectPage(routing)
         }
+        else -> h1(page.capitalize())
     }
 
 

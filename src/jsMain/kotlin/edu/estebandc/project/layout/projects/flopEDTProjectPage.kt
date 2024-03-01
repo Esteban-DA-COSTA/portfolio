@@ -23,55 +23,6 @@ fun Container.flopEDTProjectPage(routing: Routing) {
                 SubCategory.API_REST to 10
             ), routing
         )
-//        hPanel(justify = JustifyContent.SPACEAROUND) {
-//            height = 30 to UNIT.vh
-//            div {
-//                h1("Application mobile FlOp EDT")
-//                p("Cette réalisation à été faite lors de mon cursus de DUT informatique à Blagnac. Il s'agissait pour tous les élèves de réaliser un projet réel sur 6 mois.")
-//                p("Ce projet avait pour ambition de d'implémenter une version Android de l'outil de gestion de projet utilisé par l'école.")
-//            }
-//            vPanel(justify = JustifyContent.CENTER) {
-//                chart(
-//                    configuration = Configuration(
-//                        ChartType.DOUGHNUT,
-//                        listOf(
-//                            DataSets(
-//                                data = listOf(35, 35, 20, 10)
-//                            )
-//                        ),
-//                        listOf("Android", "Java", "Base de données", "API REST"),
-//                        ChartOptions(
-//
-//                            responsive = false,
-//                            onClick = { event, elements, chart ->
-//                                console.log(chart)
-//                                println("elements = ${elements.size}")
-//                                console.log(elements.get(0).datasetIndex)
-//                                when (elements.get(0).index) {
-//                                    1 -> {
-//                                        routing.navigate("/skills/java")
-//                                    }
-//
-//                                    else -> {
-//                                        routing.navigate("/home")
-//                                    }
-//                                }
-//                            },
-//                            plugins = PluginsOptions(
-//                                LegendOptions(
-//                                    position = Position.RIGHT
-//                                ),
-//                                title = TitleOptions(
-//                                    display = true,
-//                                    text = listOf("Organisation des compétences (en %)"),
-//                                    position = Position.TOP
-//                                ),
-//                            )
-//                        )
-//                    )
-//                )
-//            }
-//        }
         section("Le projet") {
             card("Le contexte") {
                 p(
