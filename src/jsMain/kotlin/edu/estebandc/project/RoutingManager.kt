@@ -18,6 +18,8 @@ enum class SubCategory(val url: String) {
     API_REST("api"),
     ANDROID("android");
 
+    fun capitalize() = name.lowercase().replaceFirstChar { it.uppercaseChar() }.replace("_", " ")
+
     companion object {
         fun urlOf(url: String): SubCategory? {
             return entries.find { subCategory -> subCategory.url == url }
@@ -27,6 +29,8 @@ enum class SubCategory(val url: String) {
 
 enum class Project(val url: String) {
     FLOD_EDT_MOBILE("flop_edt");
+
+    fun capitalize() = name.lowercase().replaceFirstChar { it.uppercaseChar() }.replace("_", " ")
 
     companion object {
         fun urlOf(url: String): Project? {

@@ -36,8 +36,7 @@ fun Container.projectSummary(
                         )
                     ),
                     skills.keys.map {
-                        it.name.lowercase()
-                            .replaceFirstChar { it1 -> if (it1.isLowerCase()) it1.titlecase() else it1.toString() }
+                        it.capitalize()
                     },
                     ChartOptions(
                         responsive = false,

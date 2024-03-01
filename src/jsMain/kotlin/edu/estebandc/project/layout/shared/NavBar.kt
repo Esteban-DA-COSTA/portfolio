@@ -33,17 +33,19 @@ fun Container.headerNav(): Navbar {
                     "Mon Parcours" to "/mon_parcours"
                 )
             )
+            val skillsList = mutableListOf("ALL" to Category.SKILLS.url)
+            SubCategory.entries.map {
+                skillsList.add(it.capitalize() to "${Category.SKILLS.url}/${it.url}")
+            }
             dropDown(
-                tr("Skills"), forNavbar = true, elements = listOf(
-                    "ALL" to Category.SKILLS.url,
-                    "Java" to "${Category.SKILLS.url}/${SubCategory.JAVA.url}"
-                )
+                tr("Skills"), forNavbar = true, elements = skillsList
             )
+            val projectList = mutableListOf("ALL" to Category.PROJECTS.url)
+            Project.entries.map {
+                projectList.add(it.capitalize() to "${Category.PROJECTS.url}/${it.url}")
+            }
             dropDown(
-                tr("Projects"), forNavbar = true, elements = listOf(
-                    "ALL" to "/projects",
-                    "FlOpEDT Mobile" to "/projects/${Project.FLOD_EDT_MOBILE.url}"
-                )
+                tr("Projects"), forNavbar = true, elements = projectList
             )
         }
 
