@@ -11,10 +11,12 @@ import io.kvision.html.header
 import io.kvision.html.main
 import io.kvision.i18n.DefaultI18nManager
 import io.kvision.i18n.I18n
+import io.kvision.navigo.Match
 import io.kvision.panel.root
 import io.kvision.routing.Routing
 import io.kvision.routing.Strategy
 import io.kvision.state.bind
+import kotlin.js.RegExp
 
 class App : Application() {
     init {
@@ -39,12 +41,17 @@ class App : Application() {
         root("kvapp") {
             routing
                 .on({ routing.navigate("/home") })
-                .on(Category.HOME.url, { RoutingManager.goToHomePage() })
-                .on(Category.SKILLS.url, { RoutingManager.goToSkillPage() })
-                .on(Category.PROJECTS.url, { RoutingManager.goToProjectPage() })
-                .on(
-                    "${Category.PROJECTS.url}/${Project.FLOD_EDT_MOBILE.url}",
-                    { RoutingManager.goToProjectPage(Project.FLOD_EDT_MOBILE) })
+                .on("/${Category.HOME.url}", { RoutingManager.goToHomePage() })
+                .on("/${Category.SKILLS.url}", { RoutingManager.goToSkillPage() })
+                .on(RegExp("^${Category.SKILLS.url}/(.*)"), { match ->
+                    val subCategory = SubCategory.urlOf(match.data[0] as String)
+                    RoutingManager.goToSkillPage(subCategory)
+                })
+                .on("/${Category.PROJECTS.url}", { RoutingManager.goToProjectPage() })
+                .on(RegExp("${Category.PROJECTS.url}/(.*)"), { match ->
+                    val project = Project.urlOf(match.data[0] as String)
+                    RoutingManager.goToProjectPage(project)
+                })
                 .resolve()
 
             header { headerNav() }

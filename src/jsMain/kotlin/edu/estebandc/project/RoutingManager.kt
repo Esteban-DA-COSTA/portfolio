@@ -6,9 +6,9 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
 
 enum class Category(val url: String) {
-    HOME("/home"),
-    SKILLS("/skills"),
-    PROJECTS("/projects")
+    HOME("home"),
+    SKILLS("skills"),
+    PROJECTS("projects")
 
 }
 
