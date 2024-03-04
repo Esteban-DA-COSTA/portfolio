@@ -17,6 +17,9 @@ fun Container.skillsPage(subCategory: Skills?) {
         Skills.JAVA -> {
             javaSkillPage()
         }
+        Skills.ANDROID -> {
+            androidSkillPage()
+        }
         else -> TODO()
     }
 
