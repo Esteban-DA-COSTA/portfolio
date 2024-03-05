@@ -49,6 +49,9 @@ fun Container.projectPage(page: Project? = null, routing: Routing) {
             console.log("test")
             flopEDTProjectPage(routing)
         }
+        Project.KLASSIFILE -> {
+            klasifileProjectPage(routing)
+        }
         else -> h1(page.capitalize())
     }
 
