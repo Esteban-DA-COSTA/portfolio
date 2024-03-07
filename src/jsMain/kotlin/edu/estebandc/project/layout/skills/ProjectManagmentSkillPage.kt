@@ -65,7 +65,7 @@ fun Container.projectManagmentSkillPage(): Container {
                 )
                 p(
                     "Il faut tout fois noter que mes compétences viennent principalement de projet effectué dans le cadre de mon cursus universitaire. Ces projets ont été réaliser pour de vrais clients, mais disposaient d'un environnement protégé, dans lequel il m'était possible de faire des erreurs.<br/>" +
-                            "Dans le milieu strictement professionnel, il m'ai arrivé d'avoir des responsabilités sur une partie d'un projet mais pas d'être le gérant de l'ensemble de ces derniers.",
+                            "Dans le milieu strictement professionnel, il m'ait arrivé d'avoir des responsabilités sur une partie d'un projet mais pas d'être le gérant de l'ensemble de ces derniers.",
                     rich = true
                 )
                 p(
