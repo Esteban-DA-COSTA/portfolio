@@ -60,7 +60,7 @@ class Card(
 }
 
 fun Container.card(
-    header: String,
+    header: String = "",
     subHeader: String? = null,
     img: ResString? = null,
     alignement: CardAlignement = CardAlignement.LEFT,

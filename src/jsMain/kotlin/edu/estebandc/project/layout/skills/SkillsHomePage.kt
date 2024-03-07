@@ -13,13 +13,9 @@ fun Container.skillsPage(subCategory: Skills?) {
                 h1("Skills Home page")
             }
         }
-
-        Skills.JAVA -> {
-            javaSkillPage()
-        }
-        Skills.ANDROID -> {
-            androidSkillPage()
-        }
+        Skills.JAVA -> javaSkillPage()
+        Skills.ANDROID -> androidSkillPage()
+        Skills.GESTION_PROJET -> projectManagmentSkillPage()
         else -> TODO()
     }
 
