@@ -45,13 +45,10 @@ fun Container.projectPage(page: Project? = null, routing: Routing) {
 
             }
         }
-        Project.FLOD_EDT_MOBILE -> {
-            console.log("test")
-            flopEDTProjectPage(routing)
-        }
-        Project.KLASSIFILE -> {
-            klasifileProjectPage(routing)
-        }
+        Project.FLOD_EDT_MOBILE -> flopEDTProjectPage(routing)
+        Project.KLASSIFILE -> klasifileProjectPage(routing)
+        Project.TSAS -> tsasProjectPage(routing)
+
         else -> h1(page.capitalize())
     }
 
