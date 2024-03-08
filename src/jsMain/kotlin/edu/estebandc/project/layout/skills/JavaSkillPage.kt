@@ -34,7 +34,7 @@ fun Container.javaSkillPage(): Container {
             card("Mon utilisation de Java") {
                 p("Pour ma part, j'ai pu mettre en pratique cette compétence dans de nombreux projets comme :")
                 ul {
-                    link("Une application mobile d'emploi du temps", "/${Category.PROJECTS.url}/${Project.FLOD_EDT_MOBILE.url}")
+                    link("Une application mobile d'emploi du temps", "/${Category.PROJECTS.url}/${Project.FLOP_EDT_MOBILE.url}")
                     link("Une application de réseau social pour un quartier", "/${Category.PROJECTS.url}/${Project.LINKED.url}")
                     link("Des applications de test de vol d'avions", "/${Category.PROJECTS.url}/${Project.TSAS.url}")
                 }

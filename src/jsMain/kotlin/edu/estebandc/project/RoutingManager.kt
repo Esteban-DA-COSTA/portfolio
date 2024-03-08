@@ -21,7 +21,7 @@ enum class Skills(val url: String, val type: SkillType) {
     TRAVAIL_EN_AUTONOMIE("autonomie", SkillType.HUMAIN),
     ANGULAR("angular", SkillType.TECHNIQUE),
     AUTO_FORMATION("auto_formation", SkillType.HUMAIN),
-    COMMUNICATION_EN_ANGLAIS("englais", SkillType.HUMAIN),
+    COMMUNICATION_EN_ANGLAIS("anglais", SkillType.HUMAIN),
     GESTION_PROJET("gestion_projet", SkillType.HUMAIN);
 
     fun capitalize() = name.lowercase().replaceFirstChar { it.uppercaseChar() }.replace("_", " ")
@@ -34,7 +34,7 @@ enum class Skills(val url: String, val type: SkillType) {
 }
 
 enum class Project(val url: String) {
-    FLOD_EDT_MOBILE("flop_edt"),
+    FLOP_EDT_MOBILE("flop_edt"),
     KLASSIFILE("klassifile"),
     LINKED("linked"),
     EREC("erec"),

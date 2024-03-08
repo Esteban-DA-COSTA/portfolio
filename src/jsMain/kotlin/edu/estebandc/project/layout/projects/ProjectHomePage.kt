@@ -5,7 +5,6 @@ import io.kvision.chart.*
 import io.kvision.core.Container
 import io.kvision.core.UNIT
 import io.kvision.html.div
-import io.kvision.html.h1
 import io.kvision.routing.Routing
 
 fun Container.projectPage(page: Project? = null, routing: Routing) {
@@ -43,16 +42,14 @@ fun Container.projectPage(page: Project? = null, routing: Routing) {
                         ),
                     )
                 )
-
             }
         }
 
-        Project.FLOD_EDT_MOBILE -> flopEDTProjectPage(routing)
+        Project.FLOP_EDT_MOBILE -> flopEDTProjectPage(routing)
         Project.KLASSIFILE -> klasifileProjectPage(routing)
         Project.TSAS -> tsasProjectPage(routing)
         Project.EREC -> erecProjectPage(routing)
-
-        else -> h1(page.capitalize())
+        Project.LINKED -> linkedProjectPage(routing)
     }
 
 

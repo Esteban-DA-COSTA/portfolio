@@ -34,7 +34,7 @@ fun Container.androidSkillPage(): Container {
         }
         section("La mise en pratique d'Android dans mon cursus") {
             card("Mon premier projet") {
-                p("J'ai découvert le développement Android lors de mon DUT. Suite à un cours dessus, nous avions dû développer une application en partenariat avec un client. Pour ma part, j'ai travaillé sur une <a href='/${Category.PROJECTS.url}/${Project.FLOD_EDT_MOBILE.url}'>application mobile de l'emploi du temps de 'IUT</a>.", rich = true)
+                p("J'ai découvert le développement Android lors de mon DUT. Suite à un cours dessus, nous avions dû développer une application en partenariat avec un client. Pour ma part, j'ai travaillé sur une <a href='/${Category.PROJECTS.url}/${Project.FLOP_EDT_MOBILE.url}'>application mobile de l'emploi du temps de 'IUT</a>.", rich = true)
                 p("Lors de ce projet, j'ai dû mettre en application mes connaissances dans le domaine du développement Android, notamment lors de l'implémentation de l'<i>AppWidget</i>, un composant Android permettant d'afficher une partie d'une application directement sur la page d'accueil du smartphone.", rich = true)
                 p("Mes compétences dans ce domaine m'a permit de mener à bien l'implémentation de l'AppWidget, ce qui a permis de livrer cette fonctionnalité à la fin du projet avec le reste des attendus. Cette appWidget permet d'afficher les projets cours des utilisateurs sans avoir à ouvrir l'application.")
             }

@@ -12,14 +12,6 @@ msgstr "Accueil"
 msgid "Skills"
 msgstr "Compétences"
 
-#: src/jsMain/kotlin/edu/estebandc/project/App.kt:16
-msgid "test"
-msgstr "je suis fr"
-
-#: src/jsMain/kotlin/edu/estebandc/project/layout/shared/NavBar.kt:15
-msgid "Skill 1"
-msgstr "Compétence 1"
-
 #: src/jsMain/kotlin/edu/estebandc/project/layout/shared/NavBar.kt:22
 msgid "Projects"
 msgstr "Projets"

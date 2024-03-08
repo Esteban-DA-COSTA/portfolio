@@ -6,19 +6,11 @@ msgstr ""
 
 #: src/jsMain/kotlin/edu/estebandc/project/components/NavBar.kt:13
 msgid "Home"
-msgstr "Test"
+msgstr "Home"
 
 #: src/jsMain/kotlin/edu/estebandc/project/components/NavBar.kt:14
 msgid "Skills"
-msgstr "TOTO"
-
-#: src/jsMain/kotlin/edu/estebandc/project/App.kt:16
-msgid "test"
-msgstr "hihihi"
-
-#: src/jsMain/kotlin/edu/estebandc/project/layout/shared/NavBar.kt:15
-msgid "Skill 1"
-msgstr "Skill 1"
+msgstr "Skills"
 
 #: src/jsMain/kotlin/edu/estebandc/project/layout/shared/NavBar.kt:22
 msgid "Projects"
