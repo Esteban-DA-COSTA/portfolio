@@ -21,7 +21,8 @@ fun Container.projectPage(page: Project? = null, routing: Routing) {
                         listOf(
                             DataSets(
                                 data = listOf(50, 30, 20),
-                            )),
+                            )
+                        ),
                         listOf("Java", "JS", "HTML"),
                         ChartOptions(
                             onClick = { event, elements, chart ->
@@ -45,9 +46,11 @@ fun Container.projectPage(page: Project? = null, routing: Routing) {
 
             }
         }
+
         Project.FLOD_EDT_MOBILE -> flopEDTProjectPage(routing)
         Project.KLASSIFILE -> klasifileProjectPage(routing)
         Project.TSAS -> tsasProjectPage(routing)
+        Project.EREC -> erecProjectPage(routing)
 
         else -> h1(page.capitalize())
     }

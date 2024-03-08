@@ -113,7 +113,8 @@ fun Container.tsasProjectPage(routing: Routing) = div {
         card("Les apports du projet") {
             p(
                 "Ce projet est l'outil principal de travail des ingénieurs Airbus affiliés aux essais en vol de leurs avions. Mes contributions ont permis de résoudre des incidents ainsi que d'améliorer les capacités des différents outils TSAS.<br/>" +
-                        "C'est un projet vouait à continuer d'évoluer, car les besoins des utilisateurs vont eux aussi évoluer.",
+                        "C'est un projet vouait à continuer d'évoluer, car les besoins des utilisateurs vont eux aussi évoluer." +
+                        "Airbus souhaiterai pouvoir utilisé les outils TSAS dans d'autres de leur branche. Avant de changer de projet, nous avions discuté de l'utilisabilité de TSAS dans la branche <i>Defense ans Space</i> par exemple.",
                 rich = true
             )
         }
