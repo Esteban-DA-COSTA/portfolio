@@ -53,9 +53,12 @@ fun Container.androidSkillPage(): Container {
             }
             card("Sa place dans mon profil") {
                 p("Android est un domaine qui m'intéresse, dans lequel j'aimerais améliorer mes compétences dans un milieu professionnel. Plus précisément, j'aimerais développer mes compétences dans le langage Kotlin, le langage recommander pour le développement Android.")
-                p("Pour développer mes compétences dans ces deux domaines, je pense réaliser une application en utilisant le framework Jetpack Compose.")
+                p("Pour développer mes compétences dans ces deux domaines, je pense réaliser une application en utilisant le framework Jetpack Compose. J'ai déjà commencé à apprendre son fonctionnement grâce à mon projet en cours en entreprise.")
             }
-            card("")
+            card("Mes conseils") {
+                p("Pour ceux qui souhaitent se lancer dans le développement Android, je conseillerai d'apprendre le langage Kotlin. Ce langage est tout d'abord celui recommandé par l'entreprise développant Android, de plus, ce langage est plus \"moderne\" que Java, dispose d'une syntaxe plus lisible.")
+                p("Pour ce qui ai d'Android pur, je conseille de regarder des tutoriels disponible sur la documentation officiele, cela permet de développer des applications simples montrant les spécificités du système d'exploitation.")
+            }
         }
     }
 }

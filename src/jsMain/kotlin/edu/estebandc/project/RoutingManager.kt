@@ -19,7 +19,7 @@ enum class Skills(val url: String, val type: SkillType) {
     ANDROID("android", SkillType.TECHNIQUE),
     C_SHARP("c_sharp", SkillType.TECHNIQUE),
     TRAVAIL_EN_AUTONOMIE("autonomie", SkillType.HUMAIN),
-    ECOUTE_CLIENTELE("ecoute", SkillType.HUMAIN),
+    ANGULAR("angular", SkillType.TECHNIQUE),
     AUTO_FORMATION("auto_formation", SkillType.HUMAIN),
     COMMUNICATION_EN_ANGLAIS("englais", SkillType.HUMAIN),
     GESTION_PROJET("gestion_projet", SkillType.HUMAIN);

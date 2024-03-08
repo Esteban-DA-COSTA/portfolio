@@ -16,6 +16,7 @@ fun Container.skillsPage(subCategory: Skills?) {
         Skills.JAVA -> javaSkillPage()
         Skills.ANDROID -> androidSkillPage()
         Skills.GESTION_PROJET -> projectManagmentSkillPage()
+        Skills.ANGULAR -> angularSkillPage()
         else -> TODO()
     }
 

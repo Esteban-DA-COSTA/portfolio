@@ -20,7 +20,7 @@ fun Container.tsasProjectPage(routing: Routing) = div {
             Skills.JAVA to 5,
             Skills.API_REST to 5,
             Skills.AUTO_FORMATION to 25,
-            Skills.ECOUTE_CLIENTELE to 35,
+            Skills.ANGULAR to 35,
             Skills.COMMUNICATION_EN_ANGLAIS to 30
         ),
         routing
