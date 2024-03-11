@@ -41,6 +41,7 @@ fun Container.klasifileProjectPage(routing: Routing): Container {
                 p("Kadys n'étant pas propriétaire de la solution Moovapps, elle ne peut pas développer de mise à jour ou amélioration sur ce dernier.")
                 p("Kadys souhaitait ajouter la communication sur la norme CMIS pour lui permettre de se connecter à des outils comme Sharepoint, des solutions de gestion de documents cloud très connus utilisant la norme CMIS.")
                 p("Il nous a donc été demandé de développer un serveur qui servirait de traduction entre les outils CMIS et le logiciel MoovApps.")
+                p("Le principal risque de ce projet, s'il nous n'arrivons pas à le réaliser serait l'incapacité de ce connecter à des outils essentiels pour les clients de Kadys, qui risquent donc de se tourner vers d'autres solutions.")
             }
         }
         section("L'implémentation du serveur CMIS") {
@@ -86,20 +87,23 @@ fun Container.klasifileProjectPage(routing: Routing): Container {
                 )
                 p("Malheureusement, le projet a été abandonné suite à la démission de Dominique. N'ayant plus personne pour continué le développement, le projet a dû être abandonné.")
             }
-            section("Mon expérience du projet") {
-                card("Mon ressenti") {
-                    p(
-                        "Ce projet fut chaotique lors de son démarrage. En effet, le semestre 3 du cursus Intech se porte sur le développement de logiciels de bureau or ce projet est un serveur, ce qui implique qu'il ne dispose pas d'interface utilisateur, et que les cours que nous avons reçu ce semestre ne nous ont pas permit de se lancer sereinement dans ce projet.<br/>" +
-                                "Cependant, il fut très enrichissant, du point de vue technique comme humain. J'ai pu découvrir la norme CMIS, ce qui m'a poussé à me documenter, à m'autoformer et de voir que chaque projet apporte son lot de surprise.<br/>" +
-                                "Du coté humain, ce projet est le seul dans lequel le client avait des compétences techniques, ce qui a engendré un rapport différent dans la communication et la gestion du projet. Avoir un client compétent dans le domaine technique est un luxe qui permet d'améliorer la productivité de toute l'équipe.",
-                        rich = true
-                    )
-                    p(
-                        "Avec le recul dont je dispose aujourd'hui, je pense que je ne réutiliserai pas le serveur de base que nous a fourni le client. Bien ce que serveur nous ai été utile pour la compréhension de la norme CMIS et nous a évité d'avoir à implémenter le modèle objet de cette dernière, ce serveur nous a empêché de développer un système sur mesure pour Moovapps et à fini par bloquer au niveau du protocole Atom.<br/>" +
-                                "Si j'ai le choix du langage, j'opterai sur Java, car j'ai une plus grande connaissance de ce dernier ainsi que du module Spring, permettant de faciliter le développement de serveur.",
-                        rich = true
-                    )
-                }
+        }
+        section("Mon expérience du projet") {
+            card("Mon ressenti") {
+                p(
+                    "Ce projet fut chaotique lors de son démarrage. En effet, le semestre 3 du cursus Intech se porte sur le développement de logiciels de bureau or ce projet est un serveur, ce qui implique qu'il ne dispose pas d'interface utilisateur, et que les cours que nous avons reçu ce semestre ne nous ont pas permit de se lancer sereinement dans ce projet.<br/>" +
+                            "Cependant, il fut très enrichissant, du point de vue technique comme humain. J'ai pu découvrir la norme CMIS, ce qui m'a poussé à me documenter, à m'autoformer et de voir que chaque projet apporte son lot de surprise.<br/>" +
+                            "Du coté humain, ce projet est le seul dans lequel le client avait des compétences techniques, ce qui a engendré un rapport différent dans la communication et la gestion du projet. Avoir un client compétent dans le domaine technique est un luxe qui permet d'améliorer la productivité de toute l'équipe.",
+                    rich = true
+                )
+                p(
+                    "Avec le recul dont je dispose aujourd'hui, je pense que je ne réutiliserai pas le serveur de base que nous a fourni le client. Bien ce que serveur nous ai été utile pour la compréhension de la norme CMIS et nous a évité d'avoir à implémenter le modèle objet de cette dernière, ce serveur nous a empêché de développer un système sur mesure pour Moovapps et à fini par bloquer au niveau du protocole Atom.<br/>" +
+                            "Si j'ai le choix du langage, j'opterai sur Java, car j'ai une plus grande connaissance de ce dernier ainsi que du module Spring, permettant de faciliter le développement de serveur.",
+                    rich = true
+                )
+            }
+            card("Les apports du projet") {
+                p("Malheureusement, les problèmes au niveau du protocole ont empêché l'utilisation du projet à la suite de mon travail. Le projet devait être continué par un développeur pour permettre son utilisation. Ce développeur ayant quitté la société, le projet à dû être abandonné entièrement.")
             }
         }
     }
