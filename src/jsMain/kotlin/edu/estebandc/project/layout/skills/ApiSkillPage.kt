@@ -41,7 +41,7 @@ fun Container.apiSkillPage() = div {
                 rich = true
             )
             p(
-                "La première API a été développée en même temps que le site web associé. Son objectif était d'interconnecter le site à la base de données dans laquelle était stockées les informations.<br/" +
+                "La première API a été développée en même temps que le site web associé. Son objectif était d'interconnecter le site à la base de données dans laquelle était stockées les informations.<br/>" +
                         "Pour cette implémentation, je me suis occupé de définir les routes de l'API. Cela signifie que j'ai mis en place les URL qui servirait pour récupérer les informations de la base de données.<br/>" +
                         "Par exemple, la route <code>/users</code> permettait de récupérer l'ensemble des utilisateurs de la base de données. La route <code>/users/{id}</code> permettait quand à elle de récupérer les informations d'un utilisateur en particulier en mettant l'identifiant d'un utilisateur particulier dans l'URL.",
                 rich = true
@@ -55,14 +55,14 @@ fun Container.apiSkillPage() = div {
         card("Les API Spring") {
             p(
                 "J'ai découvert Spring Boot en travaillant sur <a href='${Category.PROJECTS.url}/${Project.TSAS.url}'>TSAS</a>. Sur ce projet, les API étaient déjà mise en place à mon arrivée, mais j'ai pu travailler sur des évolutions de ces dernières.<br/>" +
-                        "Spring boot est un framewor permettant de créer des API REST très facilement. Le framework s'occupe d'une grande partie du fonctionnement de l'API, en proposant des fonctions pour définir simplement les routes de l'API ou la connexion à des bases de données.<br/>" +
+                        "Spring boot est un framework permettant de créer des API REST très facilement. Le framework s'occupe d'une grande partie du fonctionnement de l'API, en proposant des fonctions pour définir simplement les routes de l'API ou la connexion à des bases de données.<br/>" +
                         "Il permet aux développeurs de se concentrer sur le nécessaire.",
                 rich = true
             )
             p("L'une des évolutions que j'ai mise en place fut l'ajout et la gestion de nouvelles routes.")
             p(
                 "La route que j'ai ajoutée sur l'API permettait de communiquer une liste de paramètre plutôt qu'un seul. Pour ajouter cette liste, j'ai utilisé des <i>repositories</i>, un sous-système des API Spring permettant de créer automatiquement les systèmes de sauvegardes, de suppression et de récupération des informations de la base de données en indiquant seulement les champs de la table à travers un modèle objet.<br/>" +
-                        "Pour mon implémentation, j'ai donc modifié le repository correspondant à mes paramètres à modifier en transformant le champ d'un simple champs texte à une liste de texte.<br/>" +
+                        "Pour mon implementation, j'ai donc modifié le repository correspondant à mes paramètres à modifier en transformant le champ d'un simple champs texte à une liste de texte.<br/>" +
                         "Ce simple changement m'a permis de modifier la base de données ainsi que les routes permettant de renvoyer ces informations." +
                         "Pour parfaire l'évolution de l'API, j'ai utilisé le plugin Swagger intégré à Swing pour mettre automatiquement à jour la documentation. Swagger est un outil permettant de générer un site web de documentation d'une API. Couplé à Spring, cela permet de générer la documentation automatiquement en lisant les modèles objets de l'API.",
                 rich = true
