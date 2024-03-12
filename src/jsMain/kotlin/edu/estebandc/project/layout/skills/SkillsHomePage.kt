@@ -19,6 +19,7 @@ fun Container.skillsPage(subCategory: Skills?) {
         Skills.ANGULAR -> angularSkillPage()
         Skills.AUTO_FORMATION -> selfStudySkillPage()
         Skills.C_SHARP -> cSharpSkillPage()
+        Skills.API_REST -> apiSkillPage()
         else -> TODO()
     }
 
