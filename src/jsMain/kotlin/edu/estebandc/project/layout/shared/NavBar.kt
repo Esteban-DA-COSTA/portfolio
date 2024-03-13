@@ -1,11 +1,13 @@
 package edu.estebandc.project.layout.shared
 
 import edu.estebandc.project.*
-import io.kvision.core.*
+import io.kvision.core.Container
+import io.kvision.core.Cursor
+import io.kvision.core.UNIT
+import io.kvision.core.onClick
 import io.kvision.dropdown.DD
 import io.kvision.dropdown.dropDown
 import io.kvision.html.image
-import io.kvision.i18n.tr
 import io.kvision.navbar.*
 
 fun Container.headerNav(): Navbar {
@@ -42,7 +44,7 @@ fun Container.headerNav(): Navbar {
                     skillsList.add(it.capitalize() to "/${Category.SKILLS.url}/${it.url}")
             }
             dropDown(
-                tr("Skills"), forNavbar = true, elements = skillsList
+                "Compétences", forNavbar = true, elements = skillsList
             )
             val projectList = mutableListOf("ALL" to "/${Category.PROJECTS.url}")
             projectList.add("Separator" to DD.SEPARATOR.option)
@@ -50,7 +52,7 @@ fun Container.headerNav(): Navbar {
                 projectList.add(it.capitalize() to "/${Category.PROJECTS.url}/${it.url}")
             }
             dropDown(
-                tr("Projects"), forNavbar = true, elements = projectList
+                "Réalisations", forNavbar = true, elements = projectList
             )
         }
 

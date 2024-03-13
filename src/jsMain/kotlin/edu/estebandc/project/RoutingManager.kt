@@ -18,7 +18,7 @@ enum class Skills(val url: String, val type: SkillType) {
     API_REST("api", SkillType.TECHNIQUE),
     ANDROID("android", SkillType.TECHNIQUE),
     C_SHARP("c_sharp", SkillType.TECHNIQUE),
-    TRAVAIL_EN_AUTONOMIE("autonomie", SkillType.HUMAIN),
+    REDACTION("redaction", SkillType.HUMAIN),
     ANGULAR("angular", SkillType.TECHNIQUE),
     AUTO_FORMATION("auto_formation", SkillType.HUMAIN),
     COMMUNICATION_EN_ANGLAIS("anglais", SkillType.HUMAIN),

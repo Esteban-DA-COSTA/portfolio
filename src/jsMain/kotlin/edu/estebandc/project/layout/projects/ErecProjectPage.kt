@@ -17,12 +17,11 @@ fun Container.erecProjectPage(routing: Routing) = div {
             "Il permet de centraliser les CV, les réunions, les notes ou toutes autres information nécessaire au recrutement dans un endroit.",
         ),
         mapOf(
-            Skills.C_SHARP to 15,
-            Skills.API_REST to 10,
+            Skills.C_SHARP to 20,
+            Skills.API_REST to 20,
             Skills.ANGULAR to 10,
             Skills.BASE_DE_DONNEES to 20,
-            Skills.TRAVAIL_EN_AUTONOMIE to 25,
-            Skills.AUTO_FORMATION to 20
+            Skills.AUTO_FORMATION to 30
         ),
         routing
     )
