@@ -22,7 +22,7 @@ fun Container.skillsPage(subCategory: Skills?) {
         Skills.API_REST -> apiSkillPage()
         Skills.REDACTION -> redactionSkillPage()
         Skills.BASE_DE_DONNEES -> bddSkillPage()
-        else -> TODO()
+        Skills.COMMUNICATION_EN_ANGLAIS -> englishCommunicationSkillPage()
     }
 
 }

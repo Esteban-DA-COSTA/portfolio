@@ -58,8 +58,6 @@ fun Container.headerNav(): Navbar {
 
         nav { // Right nav with contact and language settings
             navLink("Contact")
-            navLink("Langue")
         }
-
     }
 }
