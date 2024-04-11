@@ -8,7 +8,8 @@ import kotlinx.coroutines.SupervisorJob
 enum class Category(val url: String) {
     HOME("home"),
     SKILLS("skills"),
-    PROJECTS("projects")
+    PROJECTS("projects"),
+    PARCOURS("mon_parcours")
 
 }
 
@@ -83,5 +84,9 @@ object RoutingManager : CoroutineScope by CoroutineScope(Dispatchers.Default + S
     fun goToProjectPage(project: Project? = null) {
         console.log("subPage", project)
         stateStore.dispatch(AppAction.ChangePage(Category.PROJECTS, newProject = project))
+    }
+
+    fun goToParcours() {
+        stateStore.dispatch(AppAction.ChangePage(Category.PARCOURS))
     }
 }

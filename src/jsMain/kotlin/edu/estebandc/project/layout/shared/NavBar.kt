@@ -28,7 +28,7 @@ fun Container.headerNav(): Navbar {
         }
 
         nav { // Centered nav with site navigation
-            navLink("Mon parcours", "/mon_parcours")
+            navLink("Mon parcours", "/${Category.PARCOURS.url}")
 
             val skillsList = mutableListOf("ALL" to "/${Category.SKILLS.url}")
             skillsList.add("Separator" to DD.SEPARATOR.option)

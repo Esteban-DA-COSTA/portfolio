@@ -2,6 +2,7 @@ package edu.estebandc.project
 
 import edu.estebandc.project.layout.projects.projectPage
 import edu.estebandc.project.layout.renderHomePage
+import edu.estebandc.project.layout.renderParcoursPage
 import edu.estebandc.project.layout.shared.headerNav
 import edu.estebandc.project.layout.skills.skillsPage
 import io.kvision.*
@@ -37,6 +38,7 @@ class App : Application() {
         root("kvapp") {
             routing
                 .on({ routing.navigate("/home") })
+                .on("/${Category.PARCOURS.url}", { RoutingManager.goToParcours() })
                 .on("/${Category.HOME.url}", { RoutingManager.goToHomePage() })
                 .on("/${Category.SKILLS.url}", { RoutingManager.goToSkillPage() })
                 .on(RegExp("^${Category.SKILLS.url}/(.*)"), { match ->
@@ -65,6 +67,7 @@ class App : Application() {
                     Category.PROJECTS -> {
                         projectPage(state.currentProject, routing)
                     }
+                    Category.PARCOURS -> renderParcoursPage()
                 }
             }
         }
